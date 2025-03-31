@@ -1,4 +1,4 @@
-# siftbylaureana
+# Sift by Laureana
 
 This is Sift by Laureana's unofficial website.
 
