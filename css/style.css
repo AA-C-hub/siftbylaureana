@@ -1,0 +1,62 @@
+/* GLOBAL VARIABLES */
+.root {
+
+    /* BUTTONS / DIETARY CHART */
+    --olive: #80762F;
+
+    /* FOOTER */
+    --footer-bg: #FFEDBB;
+}
+
+/* HEADER */
+
+header {
+    font-family: "Space Mono", monospace;
+    color: var(--olive);
+    padding: 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+
+
+}
+
+header a {
+    color: var(--olive);
+    text-decoration: none;
+
+}
+
+header a:hover {
+    color: var(--olive);
+}
+
+/* SITE ID */
+.site-id h1 {
+    margin: 0;
+}
+
+/* SITE NAV */
+.site-nav ul {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 1.5em;
+}
+
+.site-nav a {
+    display: block;
+    padding: 1em;
+}
+
+/* BODY */
+body {
+    background-color: #80762F;
+}
