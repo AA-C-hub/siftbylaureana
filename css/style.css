@@ -6,34 +6,379 @@
 
     /* FOOTER */
     --footer-bg: #FFEDBB;
+
+    /* TYPOGRAPHY */
+    --font-family: "Space Mono", monospace;
 }
+
+/* GRID SYSTEM (12 COLUMN) */
+
+.row {
+    --grid-gap: var(--unit-s);
+}
+
+.row>* {
+    margin-block-end: var(--grid-gap);
+}
+
+/* NEW WIDTH SYNTAX */
+@media (width >=768px) {
+    .row {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: var(--grid-gap);
+    }
+
+    /* SEMANTIC COLUMNS */
+    .one-half {
+        grid-column: auto / span 6;
+    }
+
+    .one-third {
+        grid-column: auto / span 4;
+    }
+
+    .two-thirds {
+        grid-column: auto / span 8;
+    }
+
+    .one-fourth {
+        grid-column: auto / span 3;
+    }
+
+    .three-fourths {
+        grid-column: auto / span 9;
+    }
+
+    /* SWAPS (REVERSE COLUMNS) - WORKS ONLY W/ 2 COLUMNS*/
+    .row.swapped>*:first-child {
+        order: 2;
+    }
+
+    .row.swapped>*:last-child {
+        order: 1;
+    }
+
+
+    /* CENTERED COLUMNS */
+    .one-half.centered {
+        grid-column-start: 4;
+    }
+
+    .two-thirds.centered {
+        grid-column-start: 3;
+    }
+
+    /* 12 COLUMN CLASS-BASED GRID SYSTEM */
+    .col-1 {
+        grid-column: auto / span 1;
+    }
+
+    .col-2 {
+        grid-column: auto / span 2;
+    }
+
+    .col-3 {
+        grid-column: auto / span 3;
+    }
+
+    .col-4 {
+        grid-column: auto / span 4;
+    }
+
+    .col-5 {
+        grid-column: auto / span 5;
+    }
+
+    .col-6 {
+        grid-column: auto / span 6;
+    }
+
+    .col-7 {
+        grid-column: auto / span 7;
+    }
+
+    .col-8 {
+        grid-column: auto / span 8;
+    }
+
+    .col-9 {
+        grid-column: auto / span 9;
+    }
+
+    .col-10 {
+        grid-column: auto / span 10;
+    }
+
+    .col-11 {
+        grid-column: auto / span 11;
+    }
+
+    .col-12 {
+        grid-column: auto / span 12;
+    }
+
+    /* PUSHES */
+    .push-1 {
+        grid-column-start: 1;
+    }
+
+    .push-2 {
+        grid-column-start: 2;
+    }
+
+    .push-3 {
+        grid-column-start: 3;
+    }
+
+    .push-4 {
+        grid-column-start: 4;
+    }
+
+    .push-5 {
+        grid-column-start: 5;
+    }
+
+    .push-6 {
+        grid-column-start: 6;
+    }
+
+    .push-7 {
+        grid-column-start: 7;
+    }
+
+    .push-8 {
+        grid-column-start: 8;
+    }
+
+    .push-9 {
+        grid-column-start: 9;
+    }
+
+    .push-10 {
+        grid-column-start: 10;
+    }
+
+    .push-11 {
+        grid-column-start: 11;
+    }
+
+    .push-12 {
+        grid-column-start: 12;
+    }
+}
+
+/* GLOBAL STUFF */
+a {
+    text-decoration: none;
+}
+
+p {
+    line-height: 1.5;
+    margin-block-end: 1em;
+    font-family: "Space Mono", monospace;
+}
+
+h1 {
+    font-family: "benton-modern-display", serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 3em;
+    margin-top: 0;
+}
+
+li {
+    font-family: "Space Mono", monospace;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* CENTER PARAGRAPHS INSIDE CENTERED PARENTS */
+.text-center p {
+    margin-inline: auto;
+    max-width: 600px;
+}
+
+/* HIDE CONTENT VISUALLY (BUT KEEP FOR SEO AND ACCESSIBILITY) */
+.hide-visually,
+.visually-hidden,
+.screen-reader-only {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+
+
 
 /* HEADER */
 
-header {
-    font-family: "Space Mono", monospace;
-    color: var(--olive);
-    padding: 1em;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+
+/* HEADER */
+.site-header {
+    padding-block: 1em;
+    padding-inline: 1em;
+
+    /* DISPLAY LOGO ON LEFT AND NAV ON RIGHT */
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    flex-wrap: wrap;
+}
+
+/* LOGO STYLING */
+.site-header .logo {
+    display: flex;
     align-items: center;
-
-    position: sticky;
-    top: 0;
-    width: 100%;
-    box-sizing: border-box;
-
-
+    gap: var(--unit-s);
 }
 
-header a {
-    color: var(--olive);
+.site-header .logo img {
+    max-height: 60px;
+    min-width: 60px;
+    vertical-align: middle;
+}
+
+.site-header .logo h1 {
+    font-size: 1.3125rem;
+    margin: 0;
+}
+
+.site-header .logo a {
     text-decoration: none;
-
 }
 
-header a:hover {
-    color: var(--olive);
+/* SITE NAV */
+.site-header {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: var(--unit-s);
+    flex-wrap: wrap;
+}
+
+.site-header {
+    text-decoration: none;
+    font-weight: bold;
+    padding: .5em;
+    color: var(--color-purple-900);
+}
+
+/* MENU BUTTON */
+.site-nav .menubutton {
+    position: relative;
+    z-index: 100;
+    background-color: transparent;
+    border: none;
+    font-size: inherit;
+    font-family: inherit;
+    padding: .5em;
+}
+
+.site-nav a {
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+}
+
+.site-nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* SHOW MENU BUTTON ON SMALL SCREENS */
+.site-menu .menubutton {
+    display: block;
+}
+
+.site-nav ul {
+    display: none;
+}
+
+/* BIG SCREENS:  HIDE MENU BUTTON, SHOW NAV*/
+@media (width >=768px) {
+    .site-nav .menubutton {
+        display: none;
+    }
+
+    .site-nav ul {
+        display: flex;
+        transform: translateY(10px);
+    }
+}
+
+/* SMALL SCREENS ONLY: ENABLE OVERLAY NAV */
+@media (width < 768px) {
+
+    .site-nav[data-menustate] ul {
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--color-purple-900);
+        transition: all 0.3s ease-out;
+    }
+
+    .site-nav[data-menustate] a {
+        color: var(--color-white);
+    }
+
+    .site-nav[data-menustate="open"] ul {
+        translate: 0 0;
+    }
+
+    .site-nav[data-menustate="closed"] ul {
+        translate: 100% 0;
+    }
+
+    /* ENABLE SVG ANIMATION */
+    .site-nav[data-menustate] .simple-navicon rect {
+        transition: all 0.3s ease-out;
+    }
+
+    /* CHANGE COLOR OF SVG NAV ICON WHEN MENU IS OPEN */
+    .site-nav[data-menustate="open"] .simple-navicon rect {
+        fill: var(--color-white);
+    }
+
+    /* ANIMATE NAV ICON LINES TO AN X WHEN OPEN */
+    .site-nav .simple-navicon {
+        display: block;
+    }
+
+    .site-nav .simple-navicon rect {
+        transform-origin: center;
+        width: 100%;
+    }
+
+    .site-nav[data-menustate="open"] .simple-navicon-top {
+        rotate: 45deg;
+        translate: -21% 24%;
+    }
+
+    .site-nav[data-menustate="open"] .simple-navicon-middle {
+        opacity: 0;
+    }
+
+    .site-nav[data-menustate="open"] .simple-navicon-bottom {
+        rotate: -45deg;
+        translate: -21% -24%;
+    }
+
 }
 
 /* SITE ID */
@@ -56,7 +401,103 @@ header a:hover {
     padding: 1em;
 }
 
+/* MENU BUTTON */
+/* Hide button on desktop */
+.menubutton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+    padding: 0;
+}
+
+/* Show on small screens */
+@media (max-width: 768px) {
+    .menubutton {
+        display: block;
+    }
+}
+
+/* Base navicon styling */
+.simple-navicon rect {
+    fill: #000;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+/* === OPEN STATE (turn into X) === */
+.site-nav[data-menustate="open"] .simple-navicon-top {
+    transform: rotate(45deg) translateY(7px);
+}
+
+.site-nav[data-menustate="open"] .simple-navicon-middle {
+    opacity: 0;
+}
+
+.site-nav[data-menustate="open"] .simple-navicon-bottom {
+    transform: rotate(-45deg) translateY(-7px);
+}
+
+/* Optional: hover effect */
+.menubutton:hover rect {
+    fill: #555;
+}
+
+
+
+/* BUTTONS */
+.buttons {
+    margin-top: 2em;
+    display: flex;
+    gap: 16px;
+    justify-content: left;
+}
+
+.button {
+    padding: 12px 24px;
+    border: 2px solid #000;
+    background-color: transparent;
+    color: #000;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    width: 150px;
+    text-align: center;
+    font-family: "Space Mono", monospace;
+    font-size: 0.9em;
+}
+
+.button:hover {
+    background-color: #000;
+    color: #fff;
+    transform: translateY(-4px);
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 500px) {
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* HERO */
+.hero {
+    padding: 4em 0 2em 0;
+}
+
 /* BODY */
 body {
-    background-color: #80762F;
+    background-color: #FFEDBB;
 }
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+/* FOOTER */
