@@ -14,7 +14,7 @@
 /* GRID SYSTEM (12 COLUMN) */
 
 .row {
-    --grid-gap: var(--unit-s);
+    --grid-gap: 1.5em;
 }
 
 .row>* {
@@ -187,8 +187,22 @@ h1 {
     margin-top: 0;
 }
 
+h2 {
+    font-family: "Space Mono", monospace;
+    font-weight: 200;
+    font-size: 1em;
+}
+
+ul {
+    font-family: "Space Mono", monospace;
+    font-size: 1em;
+}
+
 li {
     font-family: "Space Mono", monospace;
+    list-style: none;
+    line-height: 0.5em;
+    font-size: 0.8em;
 }
 
 img {
@@ -232,6 +246,7 @@ header {
     top: 0;
     width: 100%;
     box-sizing: border-box;
+    background-color: #FFEDBB;
 
 
 }
@@ -297,16 +312,6 @@ header a:hover {
     color: var(--color-purple-900);
 }
 
-/* MENU BUTTON */
-.site-nav .menubutton {
-    position: relative;
-    z-index: 100;
-    background-color: transparent;
-    border: none;
-    font-size: inherit;
-    font-family: inherit;
-    padding: .5em;
-}
 
 .site-nav a {
     display: block;
@@ -321,90 +326,11 @@ header a:hover {
     padding: 0;
 }
 
-/* SHOW MENU BUTTON ON SMALL SCREENS */
-.site-menu .menubutton {
-    display: block;
-}
-
 .site-nav ul {
     display: none;
 }
 
-/* BIG SCREENS:  HIDE MENU BUTTON, SHOW NAV*/
-@media (width >=768px) {
-    .site-nav .menubutton {
-        display: none;
-    }
 
-    .site-nav ul {
-        display: flex;
-        transform: translateY(10px);
-    }
-}
-
-/* SMALL SCREENS ONLY: ENABLE OVERLAY NAV */
-@media (width < 768px) {
-
-    .site-nav[data-menustate] ul {
-        display: grid;
-        align-content: center;
-        justify-content: center;
-        position: fixed;
-        right: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: var(--color-purple-900);
-        transition: all 0.3s ease-out;
-    }
-
-    .site-nav[data-menustate] a {
-        color: var(--color-white);
-    }
-
-    .site-nav[data-menustate="open"] ul {
-        translate: 0 0;
-    }
-
-    .site-nav[data-menustate="closed"] ul {
-        translate: 100% 0;
-    }
-
-    /* ENABLE SVG ANIMATION */
-    .site-nav[data-menustate] .simple-navicon rect {
-        transition: all 0.3s ease-out;
-    }
-
-    /* CHANGE COLOR OF SVG NAV ICON WHEN MENU IS OPEN */
-    .site-nav[data-menustate="open"] .simple-navicon rect {
-        fill: var(--color-white);
-    }
-
-    /* ANIMATE NAV ICON LINES TO AN X WHEN OPEN */
-    .site-nav .simple-navicon {
-        display: block;
-    }
-
-    .site-nav .simple-navicon rect {
-        transform-origin: center;
-        width: 100%;
-    }
-
-    .site-nav[data-menustate="open"] .simple-navicon-top {
-        rotate: 45deg;
-        translate: -21% 24%;
-    }
-
-    .site-nav[data-menustate="open"] .simple-navicon-middle {
-        opacity: 0;
-    }
-
-    .site-nav[data-menustate="open"] .simple-navicon-bottom {
-        rotate: -45deg;
-        translate: -21% -24%;
-    }
-
-}
 
 /* SITE ID */
 .site-id h1 {
@@ -424,48 +350,6 @@ header a:hover {
 .site-nav a {
     display: block;
     padding: 1em;
-}
-
-/* MENU BUTTON */
-/* Hide button on desktop */
-.menubutton {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: none;
-    padding: 0;
-}
-
-/* Show on small screens */
-@media (max-width: 768px) {
-    .menubutton {
-        display: block;
-    }
-}
-
-/* Base navicon styling */
-.simple-navicon rect {
-    fill: #000;
-    transition: all 0.3s ease;
-    transform-origin: center;
-}
-
-/* === OPEN STATE (turn into X) === */
-.site-nav[data-menustate="open"] .simple-navicon-top {
-    transform: rotate(45deg) translateY(7px);
-}
-
-.site-nav[data-menustate="open"] .simple-navicon-middle {
-    opacity: 0;
-}
-
-.site-nav[data-menustate="open"] .simple-navicon-bottom {
-    transform: rotate(-45deg) translateY(-7px);
-}
-
-/* Optional: hover effect */
-.menubutton:hover rect {
-    fill: #555;
 }
 
 
@@ -510,8 +394,13 @@ header a:hover {
 }
 
 /* HERO */
+.skyline-hero {
+    margin-bottom: 3em;
+    margin-top: 0;
+}
+
 .hero {
-    padding: 4em 0 2em 0;
+    padding: 1em 0 6em 0;
 }
 
 /* BODY */
@@ -526,3 +415,18 @@ body {
 }
 
 /* FOOTER */
+footer {
+    padding: 2.5em;
+    background-color: #80762F;
+    color: #FFEDBB;
+}
+
+.footer-menu {
+    margin-right: 2em;
+    margin-left: 2em;
+}
+
+footer h1 {
+    border-bottom: #FFEDBB 2px solid;
+    padding-bottom: 1rem;
+}
