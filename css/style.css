@@ -220,6 +220,31 @@ img {
 
 /* HEADER */
 
+header {
+    font-family: "Space Mono", monospace;
+    color: var(--olive);
+    padding: 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+
+
+}
+
+header a {
+    color: var(--olive);
+    text-decoration: none;
+
+}
+
+header a:hover {
+    color: var(--olive);
+}
 
 /* HEADER */
 .site-header {
