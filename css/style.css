@@ -214,6 +214,14 @@ img {
     text-align: center;
 }
 
+hr {
+    border: none;
+    height: 2px;
+    width: 1000px;
+    background-color: black;
+    margin: 40px auto;
+}
+
 /* CENTER PARAGRAPHS INSIDE CENTERED PARENTS */
 .text-center p {
     margin-inline: auto;
@@ -403,6 +411,32 @@ header a:hover {
     padding: 1em 0 6em 0;
 }
 
+/* ABOUT */
+.about h1 {
+    border-bottom: 2px solid black;
+    padding-bottom: 1rem;
+}
+
+/* MENU */
+.menu h1 {
+    border-bottom: 2px solid black;
+    padding-bottom: 1rem;
+}
+
+.menu p {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.menu-head {
+    font-family: "Space Mono", monospace;
+    font-size: 2em;
+    display: inline-block;
+    border-bottom: 2px solid black;
+    padding-bottom: 0.3em;
+}
+
+
 /* BODY */
 body {
     background-color: #FFEDBB;
@@ -426,7 +460,63 @@ footer {
     margin-left: 2em;
 }
 
+.footer-menu ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
 footer h1 {
     border-bottom: #FFEDBB 2px solid;
     padding-bottom: 1rem;
+}
+
+footer h2 {
+    display: flex;
+    justify-content: center;
+}
+
+/* FORM */
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form label {
+    font-size: 0.9rem;
+    font-family: "Space Mono", monospace;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: "benton-modern-display", serif;
+    font-style: italic;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    padding: 12px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-family: "Space Mono", monospace;
+}
+
+.contact-form button:hover {
+    background-color: #333;
+    font-family: "Space Mono", monospace;
 }
