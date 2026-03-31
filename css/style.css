@@ -193,17 +193,88 @@ h2 {
     font-size: 1em;
 }
 
+.services h2 {
+    font-family: "Space Mono", monospace;
+    font-weight: 200;
+    font-size: 1.5em;
+}
+
+.services p {
+    margin-top: 2em;
+    width: 350px;
+}
+
 ul {
     font-family: "Space Mono", monospace;
     font-size: 1em;
+    margin: 1em;
 }
+
+
 
 li {
     font-family: "Space Mono", monospace;
-    list-style: none;
-    line-height: 0.5em;
-    font-size: 0.8em;
+    /* list-style: none; */
+    /* line-height: 0.5em; */
+    font-size: 1em;
 }
+
+a {
+    color: #000;
+}
+
+/* UNDERLINE HOVER A TAG EFFECT */
+.location {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    z-index: -1;
+}
+
+.location::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    /* adjust spacing */
+    width: 100%;
+    height: 2px;
+    background-color: black;
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.location:hover::after {
+    transform: scaleX(1);
+}
+
+.header {
+    position: relative;
+    text-decoration: none;
+    color: black;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    /* adjust spacing */
+    width: 100%;
+    height: 2px;
+    background-color: black;
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.header:hover::after {
+    transform: scaleX(1);
+}
+
 
 img {
     max-width: 100%;
@@ -212,6 +283,13 @@ img {
 
 .text-center {
     text-align: center;
+}
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 hr {
@@ -370,6 +448,13 @@ header a:hover {
     justify-content: left;
 }
 
+.menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 1em;
+}
+
 .button {
     padding: 12px 24px;
     border: 2px solid #000;
@@ -434,6 +519,50 @@ header a:hover {
     display: inline-block;
     border-bottom: 2px solid black;
     padding-bottom: 0.3em;
+}
+
+/* MENU - COFFEE */
+.drinks h1 {
+    font-family: "Space Mono", monospace;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 5em;
+    border-bottom: #000 2px solid;
+    text-align: center;
+}
+
+.dietary-icons {
+    background-color: #80762F;
+    color: #FFEDBB;
+    padding: 2em;
+    width: 70%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+.icons-title {
+    font-family: "Space Mono", monospace;
+    font-size: 1.5em;
+    margin-top: 0;
+    border-bottom: 2px solid #FFEDBB;
+}
+
+.dietary-icons ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1em;
+}
+
+
+
+/* SERVICES */
+
+
+.services h1 {
+    border-bottom: 2px solid black;
+    padding-bottom: 1rem;
 }
 
 
