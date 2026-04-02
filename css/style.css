@@ -193,6 +193,11 @@ h2 {
     font-size: 1em;
 }
 
+h3 {
+    font-family: "Space Mono", monospace;
+    font-weight: 200;
+}
+
 .services h2 {
     font-family: "Space Mono", monospace;
     font-weight: 200;
@@ -333,6 +338,7 @@ header {
     width: 100%;
     box-sizing: border-box;
     background-color: #FFEDBB;
+    z-index: 1000;
 
 
 }
@@ -525,19 +531,25 @@ header a:hover {
 .drinks h1 {
     font-family: "Space Mono", monospace;
     font-weight: 500;
-    font-style: normal;
-    font-size: 5em;
+    font-size: clamp(2.2rem, 6vw, 5rem);
     border-bottom: #000 2px solid;
     text-align: center;
+}
+
+.dietary-icons p {
+    margin-top: 1.5em;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
 }
 
 .dietary-icons {
     background-color: #80762F;
     color: #FFEDBB;
-    padding: 2em;
-    width: 70%;
+    padding: clamp(1.2em, 3vw, 2em);
+    width: min(90%, 700px);
+    margin: 0 auto;
     border-radius: 10px;
-    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .icons-title {
@@ -550,12 +562,346 @@ header a:hover {
 .dietary-icons ul {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+    /* allows wrapping */
     list-style: none;
     padding-left: 0;
     margin-top: 1em;
+    gap: 1em;
 }
 
+.dietary-icons li {
+    position: relative;
+    padding-left: 20px;
+    /* space for the circle */
+}
 
+@media (max-width: 600px) {
+    .dietary-icons ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dietary-icons li {
+        padding-left: 35px;
+        /* more room for big circles */
+    }
+
+    .dietary-icons p {
+        margin-top: 1.5em;
+        font-size: 0.9rem;
+        letter-spacing: 0.05em;
+        text-align: center;
+        background-color: #FFEDBB;
+        color: #80762F;
+        padding: 1em;
+        border-radius: 10px;
+    }
+}
+
+/* Base circle style */
+.dietary-icons li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-150%, -50%);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+}
+
+@media (max-width: 600px) {
+    .dietary-icons li::before {
+        width: 16px;
+        height: 16px;
+        transform: translate(-120%, -50%);
+    }
+}
+
+/* Temperature section (first ul) */
+.dietary-icons p:nth-of-type(1)+ul li:nth-child(1)::before {
+    background-color: #4DA6FF;
+    /* Iced */
+}
+
+.dietary-icons p:nth-of-type(1)+ul li:nth-child(2)::before {
+    background-color: #FF4D4D;
+    /* Hot */
+}
+
+/* Milk section (second ul) */
+.dietary-icons p:nth-of-type(2)+ul li:nth-child(1)::before {
+    background-color: #FFD27F;
+    /* Whole */
+}
+
+.dietary-icons p:nth-of-type(2)+ul li:nth-child(2)::before {
+    background-color: #D2A679;
+    /* Oat */
+}
+
+.dietary-icons p:nth-of-type(2)+ul li:nth-child(3)::before {
+    background-color: #FFE5CC;
+    /* Almond */
+}
+
+.dietary-icons p:nth-of-type(2)+ul li:nth-child(4)::before {
+    background-color: #FFFFFF;
+    /* None */
+}
+
+/* Extras section (third ul) */
+.dietary-icons p:nth-of-type(3)+ul li:nth-child(1)::before {
+    background-color: #FFB347;
+    /* Syrups */
+}
+
+.dietary-icons p:nth-of-type(3)+ul li:nth-child(2)::before {
+    background-color: #FFD1DC;
+    /* Whipped Cream */
+}
+
+.dietary-icons p:nth-of-type(3)+ul li:nth-child(3)::before {
+    background-color: #6E2C00;
+    /* Espresso shot */
+}
+
+/* MENU - DRINKS GRID */
+
+/* MENU GRID */
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 4px solid black;
+}
+
+/* ITEMS */
+.item {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 50px;
+    border-bottom: 2px solid black;
+}
+
+.item:nth-child(odd) {
+    border-right: 2px solid black;
+}
+
+/* IMAGE */
+.drink {
+    width: 140px;
+}
+
+/* TITLE */
+.info h3 {
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-style: italic;
+    border-bottom: 1px solid black;
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.info span {
+    font-size: 14px;
+    font-family: "Space Mono", monospace;
+    margin-top: 8px;
+}
+
+/* TABLE */
+.table {
+    font-size: 14px;
+}
+
+.drinks-row {
+    display: grid;
+    grid-template-columns: 30px 60px 60px;
+    align-items: center;
+    margin: 6px 0;
+    gap: 1em;
+}
+
+.drinks-menu-header {
+    font-weight: bold;
+}
+
+.divider {
+    border-bottom: 2px dotted #000;
+    margin: 10px 0;
+}
+
+/* DOTS */
+.dot {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+}
+
+.red {
+    background: #e60000;
+}
+
+.blue {
+    background: #5bc0de;
+}
+
+.brown {
+    background: #5a3825;
+}
+
+/* EXTRAS */
+.extras {
+    margin-top: 2em;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.circle {
+    width: 26px;
+    height: 26px;
+    background-color: #FFD27F;
+    border: 1px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.oat-circle {
+    width: 26px;
+    height: 26px;
+    background-color: #D2A679;
+    border: 1px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.almond-circle {
+    width: 26px;
+    height: 26px;
+    background-color: #FFE5CC;
+    border: 1px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.non-circle {
+    width: 26px;
+    height: 26px;
+    background-color: #FFFFFF;
+    border: 1px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+/* =========================
+   RESPONSIVE GRID
+========================= */
+
+/* tablet */
+@media (max-width: 1024px) {
+    .container {
+        padding: 16px;
+    }
+
+    .menu {
+        gap: 0;
+    }
+
+    .item {
+        padding: 40px 30px;
+        gap: 30px;
+    }
+
+    .drink {
+        width: 120px;
+    }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+
+    .menu {
+        grid-template-columns: 1fr;
+        /* stack */
+    }
+
+    /* remove center divider */
+    .item:nth-child(odd) {
+        border-right: none;
+    }
+
+    .item {
+        flex-direction: column;
+        /* stack image + content */
+        align-items: center;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .drink {
+        width: 110px;
+    }
+
+    /* center the table */
+    .drinks-row {
+        grid-template-columns: 30px 70px 70px;
+        justify-content: center;
+    }
+
+    .info h3 {
+        text-align: center;
+    }
+
+    .extras {
+        justify-content: center;
+    }
+}
+
+/* small phones */
+@media (max-width: 480px) {
+    .container {
+        margin: 20px auto;
+        padding: 12px;
+    }
+
+    .item {
+        padding: 24px 16px;
+    }
+
+    .drink {
+        width: 95px;
+    }
+
+    .info h3 {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+    }
+
+    .drinks-row {
+        grid-template-columns: 24px 60px 60px;
+        font-size: 12px;
+    }
+
+    .circle {
+        width: 22px;
+        height: 22px;
+        font-size: 10px;
+    }
+}
 
 /* SERVICES */
 
