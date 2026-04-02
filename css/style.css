@@ -670,7 +670,7 @@ header a:hover {
 /* MENU - DRINKS GRID */
 
 /* MENU GRID */
-.menu {
+.menu-drinks {
     display: grid;
     grid-template-columns: 1fr 1fr;
     border-top: 4px solid black;
