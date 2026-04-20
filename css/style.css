@@ -605,8 +605,80 @@ header a:hover {
     }
 }
 
+/* MENU - COFFEE */
+.food h1 {
+    font-family: "Space Mono", monospace;
+    font-weight: 500;
+    font-size: clamp(2.2rem, 6vw, 5rem);
+    border-bottom: #000 2px solid;
+    text-align: center;
+}
+
+.dietary-icons-food p {
+    margin-top: 1.5em;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+}
+
+.dietary-icons-food {
+    background-color: #80762F;
+    color: #FFEDBB;
+    padding: clamp(1.2em, 3vw, 2em);
+    width: min(90%, 700px);
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.icons-title {
+    font-family: "Space Mono", monospace;
+    font-size: 1.5em;
+    margin-top: 0;
+    border-bottom: 2px solid #FFEDBB;
+}
+
+.dietary-icons-food ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* allows wrapping */
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1em;
+    gap: 1em;
+}
+
+.dietary-icons-food li {
+    position: relative;
+    padding-left: 20px;
+    /* space for the circle */
+}
+
+@media (max-width: 600px) {
+    .dietary-icons-food ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dietary-icons-food li {
+        padding-left: 35px;
+        /* more room for big circles */
+    }
+
+    .dietary-icons-food p {
+        margin-top: 1.5em;
+        font-size: 0.9rem;
+        letter-spacing: 0.05em;
+        text-align: center;
+        background-color: #FFEDBB;
+        color: #80762F;
+        padding: 1em;
+        border-radius: 10px;
+    }
+}
+
 /* Base circle style */
-.dietary-icons li::before {
+.dietary-icons-food li::before {
     content: "";
     position: absolute;
     left: 0;
@@ -618,60 +690,45 @@ header a:hover {
 }
 
 @media (max-width: 600px) {
-    .dietary-icons li::before {
+    .dietary-icons-food li::before {
         width: 16px;
         height: 16px;
         transform: translate(-120%, -50%);
     }
 }
 
-/* Temperature section (first ul) */
-.dietary-icons p:nth-of-type(1)+ul li:nth-child(1)::before {
-    background-color: #4DA6FF;
-    /* Iced */
-}
-
-.dietary-icons p:nth-of-type(1)+ul li:nth-child(2)::before {
+/* spice level section (first ul) */
+.dietary-icons-food p:nth-of-type(1)+ul li:nth-child(1)::before {
     background-color: #FF4D4D;
     /* Hot */
 }
 
-/* Milk section (second ul) */
-.dietary-icons p:nth-of-type(2)+ul li:nth-child(1)::before {
+.dietary-icons-food p:nth-of-type(1)+ul li:nth-child(2)::before {
+    background-color: #fa1616;
+    /* VERY Hot */
+}
+
+.dietary-icons-food p:nth-of-type(1)+ul li:nth-child(3)::before {
+    background-color: #970000;
+    /* SUPER Hot */
+}
+
+/* allergen section (second ul) */
+.dietary-icons-food p:nth-of-type(2)+ul li:nth-child(1)::before {
     background-color: #FFD27F;
-    /* Whole */
+    /* nuts */
 }
 
-.dietary-icons p:nth-of-type(2)+ul li:nth-child(2)::before {
+.dietary-icons-food p:nth-of-type(2)+ul li:nth-child(2)::before {
     background-color: #D2A679;
-    /* Oat */
+    /* milk */
 }
 
-.dietary-icons p:nth-of-type(2)+ul li:nth-child(3)::before {
+.dietary-icons-food p:nth-of-type(2)+ul li:nth-child(3)::before {
     background-color: #FFE5CC;
-    /* Almond */
+    /* egg */
 }
 
-.dietary-icons p:nth-of-type(2)+ul li:nth-child(4)::before {
-    background-color: #FFFFFF;
-    /* None */
-}
-
-/* Extras section (third ul) */
-.dietary-icons p:nth-of-type(3)+ul li:nth-child(1)::before {
-    background-color: #FFB347;
-    /* Syrups */
-}
-
-.dietary-icons p:nth-of-type(3)+ul li:nth-child(2)::before {
-    background-color: #FFD1DC;
-    /* Whipped Cream */
-}
-
-.dietary-icons p:nth-of-type(3)+ul li:nth-child(3)::before {
-    background-color: #6E2C00;
-    /* Espresso shot */
-}
 
 /* MENU - DRINKS GRID */
 
@@ -923,7 +980,7 @@ header a:hover {
 }
 
 .card {
-    background: #80762F;
+    background: #5b541f;
     padding: 20px;
     text-align: center;
     border-radius: 4px;
