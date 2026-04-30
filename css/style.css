@@ -363,7 +363,6 @@ header a:hover {
     padding-block: 1em;
     padding-inline: 1em;
 
-    /* DISPLAY LOGO ON LEFT AND NAV ON RIGHT */
     display: flex;
     justify-content: space-between;
     /* align-items: center; */
@@ -807,7 +806,6 @@ header a:hover {
 .dietary-icons li {
     position: relative;
     padding-left: 20px;
-    /* space for the circle */
 }
 
 @media (max-width: 600px) {
@@ -818,7 +816,6 @@ header a:hover {
 
     .dietary-icons li {
         padding-left: 35px;
-        /* more room for big circles */
     }
 
     .dietary-icons p {
@@ -1068,7 +1065,6 @@ header a:hover {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    /* allows wrapping */
     list-style: none;
     padding-left: 0;
     margin-top: 1em;
