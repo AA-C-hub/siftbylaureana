@@ -306,6 +306,7 @@ img {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 3em;
 }
 
 hr {
@@ -353,7 +354,7 @@ header {
 
     padding: 0.8em 2em;
 
-    background: rgba(255, 237, 187, 0.85);
+    background: rgba(79, 85, 0, 0.85);
     backdrop-filter: blur(10px);
 
     border-radius: 999px;
@@ -362,7 +363,7 @@ header {
 }
 
 header a {
-    color: var(--olive);
+    color: #D2A679;
     text-decoration: none;
 
 }
@@ -465,7 +466,7 @@ header a:hover {
 
 .site-nav a {
     text-decoration: none;
-    color: var(--olive);
+    color: #FFE5CC;
     padding: 0.6em 1em;
     border-radius: 999px;
     transition: 0.3s ease;
@@ -836,6 +837,7 @@ header a:hover {
     color: #f8f1e7;
     border: 1.5px solid rgba(248, 241, 231, 0.8);
     background: rgba(255, 255, 255, 0.08);
+    font-family: 'Space Mono', monospace;
     backdrop-filter: blur(6px);
     padding: 16px 28px;
     border-radius: 12px;
@@ -1531,6 +1533,21 @@ body {
     max-width: 1000px;
     margin: 0 auto;
     padding: 1em;
+}
+
+.container-menu {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 7em 0;
+
+}
+
+.container-drinks,
+.container-food {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 7em 0;
+
 }
 
 /* FOOTER */
